@@ -6,33 +6,32 @@ const inputArray = fs
 	.toString()
 	.split('\n');
 
-for (let init = 0, len = inputArray.length; init < len - 1; init++) {
-	const initVal = parseInt(inputArray[init], 10);
-	for (let search = init + 1; search < len; search++) {
-		const searchVal = parseInt(inputArray[search], 10);
-		if (initVal + searchVal === LOOKING_FOR) {
-			console.log('Part 1: ');
-			console.log({ initVal, searchVal });
-			console.log('Multiplied: ', initVal * searchVal);
-			break;
-		}
-	}
-}
+const searchArray = inputArray;
+const searchLength = inputArray.length - 1; // Newline at the end
 
-console.log('=============================');
-
-for (let init = 0, len = inputArray.length; init < len - 2; init++) {
-	const initVal = parseInt(inputArray[init], 10);
-	for (let search = init + 1; search < len - 1; search++) {
-		const searchVal = parseInt(inputArray[search], 10);
-		for (let final = search + 1; final < len; final++) {
-			const finalVal = parseInt(inputArray[final], 10);
-			if (initVal + searchVal + finalVal === LOOKING_FOR) {
-				console.log('Part 2: ');
-				console.log({ initVal, searchVal, finalVal });
-				console.log('Multiplied: ', initVal * searchVal * finalVal);
-				break;
+const recursiveSearch = (
+	numProducts: number,
+	starting = 0,
+	valueArray: Array<number> = []
+): boolean => {
+	for (let i = starting; i < searchLength - (numProducts - 1); i++) {
+		const newValArray = valueArray.concat([parseInt(searchArray[i], 10)]);
+		if (numProducts === 1) {
+			const product = newValArray.reduce((prev, curr) => prev + curr, 0);
+			if (product === LOOKING_FOR) {
+				console.log(newValArray.reduce((prev, curr) => prev * curr, 1));
+				return true;
 			}
+		} else if (
+			recursiveSearch(numProducts - 1, starting + 1, newValArray)
+		) {
+			return true;
 		}
 	}
-}
+	return false;
+};
+
+console.log('Part 1: ');
+recursiveSearch(2);
+console.log('Part 2: ');
+recursiveSearch(3);
