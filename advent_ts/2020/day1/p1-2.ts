@@ -1,10 +1,16 @@
 import fs from 'fs';
+import path, { dirname } from 'path';
+import { fileURLToPath } from 'url';
 
-const LOOKING_FOR = 2020;
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
 const inputArray = fs
-	.readFileSync('./2020/day1/input.txt')
+	.readFileSync(path.resolve(__dirname, 'input.txt'))
 	.toString()
 	.split('\n');
+
+const LOOKING_FOR = 2020;
 
 const searchArray = inputArray;
 const searchLength = inputArray.length - 1; // Newline at the end
