@@ -27,5 +27,5 @@
 		"noEmit": true,
 		"isolatedModules": true
 	},
-	"include": ["2020/**/*"]
+	"include": ["advent_ts/**/*"]
 }

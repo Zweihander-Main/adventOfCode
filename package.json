@@ -1,5 +1,5 @@
 {
-	"name": "advent_ts",
+	"name": "advent",
 	"private": true,
 	"description": "",
 	"version": "0.0.1",
@@ -22,7 +22,7 @@
 		"typescript": "^3.9.7"
 	},
 	"scripts": {
-		"run": "node --loader ts-node/esm.mjs",
+		"ts-run": "node --loader ts-node/esm.mjs",
 		"test": "echo \"Write tests! -> \" && exit 1"
 	},
 	"eslintConfig": {

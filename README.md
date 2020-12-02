@@ -1,1 +1,1 @@
-`npm run run $.ts`
+`npm run ts-run $.ts`
