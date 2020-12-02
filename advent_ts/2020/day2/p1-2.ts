@@ -7,8 +7,8 @@ const inputArray = fs
 
 let len = inputArray.length - 1; //newline at end
 
-let validPasswordsPart1 = 0;
-let validPasswordsPart2 = 0;
+let validPasswordsPolicy1 = 0;
+let validPasswordsPolicy2 = 0;
 for (let i = 0; i < len; i++) {
 	const [policy, letterText, password] = inputArray[i].split(' ');
 	const [min, max] = policy.split('-').map((val) => parseInt(val, 10));
@@ -20,16 +20,18 @@ for (let i = 0; i < len; i++) {
 		}
 	}
 	if (numOccurrences >= min && numOccurrences <= max) {
-		validPasswordsPart1++;
+		validPasswordsPolicy1++;
 	}
+	// Unary conversion to bits, then bitwise XOR
 	if (
 		+(password.charAt(min - 1) === letter) ^
 		+(password.charAt(min - 1) === letter)
 	) {
-		validPasswordsPart2++;
+		validPasswordsPolicy2++;
 	}
 }
-console.log('Part 1: ');
-console.log(validPasswordsPart1);
-console.log('Part 2: ');
-console.log(validPasswordsPart2);
+
+console.log('Policy 1: ');
+console.log(validPasswordsPolicy1);
+console.log('Policy 2: ');
+console.log(validPasswordsPolicy2);
