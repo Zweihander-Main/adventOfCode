@@ -23,6 +23,7 @@
 	},
 	"scripts": {
 		"ts-run": "node --loader ts-node/esm.mjs",
+		"ts-debug": "node --inspect=127.0.0.1:9228 --loader ts-node/esm.mjs",
 		"test": "echo \"Write tests! -> \" && exit 1"
 	},
 	"eslintConfig": {
