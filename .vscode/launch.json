@@ -11,7 +11,7 @@
 			"runtimeExecutable": "npm",
 			"skipFiles": ["<node_internals>/**"],
 			"type": "pwa-node",
-			"program": "${workspaceFolder}\\advent_ts\\2015\\day6\\p1-2.ts"
+			"program": "${workspaceFolder}\\advent_ts\\2015\\day7\\p1-2.ts"
 		}
 	]
 }
