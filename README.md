@@ -7,7 +7,7 @@ Advent of Code puzzles. Currently mostly in TypeScript with other languages anti
 | Year | Completed |
 | :--- | --------: |
 | 2015 |    7 / 25 |
-| 2020 |    5 / 25 |
+| 2020 |    7 / 25 |
 
 ## Structure
 
